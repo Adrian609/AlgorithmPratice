@@ -29,23 +29,23 @@ module.export = function () {
         return sortedArr;
     }
 
-var arrNums = [10, 7, 3, 1, 9, 8, 4, 2];
-var arrChars = ['e', 'c', 'b', 'a', 'f', 'h', 'g', 'd'];
-var arrCharsMixed = ['e', 'A', 'b', 'a', 'C', 'h', 'g', 'AAA', '1'];
-var arrStrings = ["HHH", "GGG", "EEE", "FFF", "AAA", "BBB", "DDD", "CCC"];
+    var arrNums = [10, 7, 3, 1, 9, 8, 4, 2];
+    var arrChars = ['e', 'c', 'b', 'a', 'f', 'h', 'g', 'd'];
+    var arrCharsMixed = ['e', 'A', 'b', 'a', 'C', 'h', 'g', 'AAA', '1'];
+    var arrStrings = ["HHH", "GGG", "EEE", "FFF", "AAA", "BBB", "DDD", "CCC"];
 
-console.log("-------------Initial-----------------");
-console.log('Array Nums    :', arrNums.join(' '));
-console.log('Array Chars   :', arrChars.join(' '));
-console.log('Array Strings :', arrStrings.join(' '));
-console.log('Array mixed   :', arrCharsMixed.join(' '));
+    console.log("-------------Initial-----------------");
+    console.log('Array Nums    :', arrNums.join(' '));
+    console.log('Array Chars   :', arrChars.join(' '));
+    console.log('Array Strings :', arrStrings.join(' '));
+    console.log('Array mixed   :', arrCharsMixed.join(' '));
 
-console.log("-------------RESULTS-----------------");
+    console.log("-------------RESULTS-----------------");
 
-console.log('Array Nums    :', mergeSort([1,3,2,4,5]).join(" "));
-console.log('Array Nums    :', mergeSort(arrNums).join(" "));
+    console.log('Array Nums    :', mergeSort([1, 3, 2, 4, 5]).join(" "));
+    console.log('Array Nums    :', mergeSort(arrNums).join(" "));
 
-console.log('Array Chars   :', mergeSort(arrChars).join(" "));
-console.log('Array Strings :', mergeSort(arrStrings).join(" "));
-console.log('Array mixed   :', mergeSort(arrCharsMixed).join(" "));
+    console.log('Array Chars   :', mergeSort(arrChars).join(" "));
+    console.log('Array Strings :', mergeSort(arrStrings).join(" "));
+    console.log('Array mixed   :', mergeSort(arrCharsMixed).join(" "));
 }
