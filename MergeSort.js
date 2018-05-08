@@ -1,50 +1,51 @@
 // @ts-check
 function mergeSort(arr) {
     if (arr.length === 1) {
-        // return once we hit an array with a single item
         return arr;
     }
+    var mergeArr = arr;
 
-    var middle = Math.floor(arr.length / 2); // get the middle item of the array rounded down
-    var left = arr.slice(0, middle); // items on the left side
-    var right = arr.slice(middle); // items on the right side
+    const middle = Math.floor(mergeArr.length / 2);
+    const left = mergeArr.slice(0, middle);
+    const right = mergeArr.slice(middle, mergeArr.length);
 
     return merge(mergeSort(left), mergeSort(right));
-
 }
-
-// compare the arrays item by item and return the concatenated result
 function merge(left, right) {
-    var result = [];
-    var indexLeft = 0;
-    var indexRight = 0;
+    var sortedArr = [];
 
-    while (indexLeft < left.length && indexRight < right.length) {
-        if (left[indexLeft] < right[indexRight]) {
-            result.push(left[indexLeft]);
-            indexLeft++;
+    while (left.length && right.length) {
+        if (left[0] <= right[0]) {
+            sortedArr.push(left.shift());
         } else {
-            result.push(right[indexRight]);
-            indexRight++;
+            sortedArr.push(right.shift());
         }
     }
-
-    return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
+    while (left.length) {
+        sortedArr.push(left.shift());
+    }
+    while (right.length) {
+        sortedArr.push(right.shift());
+    }
+    
+    return sortedArr ;
 }
+
 
 var arrNums = [10, 7, 3, 1, 9, 8, 4, 2];
 var arrChars = ['e', 'c', 'b', 'a', 'f', 'h', 'g', 'd'];
 var arrCharsMixed = ['e', 'A', 'b', 'a', 'C', 'h', 'g', 'AAA', '1'];
 var arrStrings = ["HHH", "GGG", "EEE", "FFF", "AAA", "BBB", "DDD", "CCC"];
 
+console.log("-------------Initial-----------------");
 console.log('Array Nums    :', arrNums.join(' '));
 console.log('Array Chars   :', arrChars.join(' '));
 console.log('Array Strings :', arrStrings.join(' '));
 console.log('Array mixed   :', arrCharsMixed.join(' '));
 
-
 console.log("-------------RESULTS-----------------");
-console.log('Array Nums    :', mergeSort(arrNums).join(' '));
-console.log('Array Chars   :', mergeSort(arrChars).join(' '));
-console.log('Array Strings :', mergeSort(arrStrings).join(' '));
-console.log('Array mixed   :', mergeSort(arrCharsMixed).join(' '));
+console.log('Array Nums    :', mergeSort(arrNums).join(" "));
+
+console.log('Array Chars   :', mergeSort(arrChars).join(" "));
+console.log('Array Strings :', mergeSort(arrStrings).join(" "));
+console.log('Array mixed   :', mergeSort(arrCharsMixed).join(" "));
