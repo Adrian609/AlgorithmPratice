@@ -27,8 +27,8 @@ function merge(left, right) {
     while (right.length) {
         sortedArr.push(right.shift());
     }
-    
-    return sortedArr ;
+
+    return sortedArr;
 }
 
 
